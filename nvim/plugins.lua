@@ -5,7 +5,6 @@ local plugins = {
             ensure_installed = {
                 "rust-analyzer",
                 "html-lsp",
-                "cssls"
             },
         },
     },
