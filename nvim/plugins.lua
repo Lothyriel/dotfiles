@@ -4,8 +4,7 @@ local plugins = {
         opts = {
             ensure_installed = {
                 "rust-analyzer",
-                "tsserver",
-                "html",
+                "html-lsp",
                 "cssls"
             },
         },
