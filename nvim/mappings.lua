@@ -26,7 +26,7 @@ M.dap = {
       "<cmd> DapStepInto <CR>",
       "Step Into"
     },
-    ["<leader>gd"] = {
+    ["<leader>gt"] = {
       "<cmd> Git diffthis <CR>",
       "Git diff this"
     },

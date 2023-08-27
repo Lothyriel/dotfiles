@@ -1,12 +1,12 @@
 local plugins = {
     {
-        "williamboman/mason.nvim",
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {
-            ensure_installed = {
-                "rust-analyzer",
-                "html-lsp",
-            },
-        },
+         -- your configuration comes here
+         -- or leave it empty to use the default settings
+         -- refer to the configuration section below
+        }
     },
     {
         "neovim/nvim-lspconfig",
@@ -14,6 +14,21 @@ local plugins = {
             require "plugins.configs.lspconfig"
             require "custom.configs.lspconfig"
         end,
+    },
+    {
+        "williamboman/mason.nvim",
+        opts = {
+            ensure_installed = {
+                "rust-analyzer",
+                "html-lsp",
+                "tsserver"
+            },
+        },
+    },
+    {
+        "pmizio/typescript-tools.nvim",
+        dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+        opts = {},
     },
     {
         "rust-lang/rust.vim",
@@ -33,7 +48,7 @@ local plugins = {
             local path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/") or ""
             local codelldb_path = path .. "adapter/codelldb"
             local liblldb_path = path .. "lldb/lib/liblldb.so"
-
+            
             if vim.fn.filereadable(codelldb_path) and vim.fn.filereadable(liblldb_path) then
               opts.dap = {
                 adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
@@ -46,7 +61,7 @@ local plugins = {
                 .. liblldb_path
               vim.notify(msg, vim.log.levels.ERROR)
             end
-
+          
             require('rust-tools').setup(opts)
         end,
     },
