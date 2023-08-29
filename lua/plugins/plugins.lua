@@ -1,5 +1,4 @@
 return {
-  -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -18,6 +17,7 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
+        "codelldb",
       },
     },
   },
