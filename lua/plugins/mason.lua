@@ -5,6 +5,7 @@ return {
       "stylua",
       "codelldb",
       "omnisharp",
+      "css-lsp",
     },
   },
 }
