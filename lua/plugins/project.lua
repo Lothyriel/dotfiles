@@ -6,7 +6,6 @@ return {
       "package.json",
       "Cargo.toml",
       "*.sln",
-      "init.lua",
     },
     exclude_dirs = {
       ".git",
@@ -14,6 +13,7 @@ return {
       "target",
       "bin",
       "obj",
+      "nvim-data",
     },
   },
 }
