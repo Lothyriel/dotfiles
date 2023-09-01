@@ -1,1 +1,1 @@
-# Neovim configs started with 💤 LazyVim
+# Neovim configs using lazy plugin manager
