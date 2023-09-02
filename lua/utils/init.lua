@@ -4,6 +4,11 @@ local M = {}
 
 local terminals = {}
 
+---@param plugin string
+function M.has(plugin)
+  return require("lazy.core.config").spec.plugins[plugin] ~= nil
+end
+
 ---@param on_attach fun(client, buffer)
 function M.on_attach(on_attach)
   vim.api.nvim_create_autocmd("LspAttach", {
