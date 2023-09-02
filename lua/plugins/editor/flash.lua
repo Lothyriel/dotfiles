@@ -20,7 +20,6 @@ return {
   -- Flash Telescope config
   {
     "nvim-telescope/telescope.nvim",
-    optional = true,
     opts = function(_, opts)
       local function flash(prompt_bufnr)
         require("flash").jump({
