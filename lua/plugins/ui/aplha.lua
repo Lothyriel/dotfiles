@@ -1,6 +1,5 @@
 return {
-  -- Dashboard. This runs when neovim starts, and is what displays
-  -- the "LAZYVIM" banner.
+  -- Dashboard. This runs when neovim starts
   "goolord/alpha-nvim",
   event = "VimEnter",
   opts = function()
