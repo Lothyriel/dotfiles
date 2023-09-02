@@ -1,4 +1,31 @@
-local lazy = require("config.lazy")
+local did_init = false
+
+local opts = {
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
+}
+
+local bootstrap = function()
+  local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+  if not vim.loop.fs_stat(lazypath) then
+    -- bootstrap lazy.nvim
+    -- stylua: ignore
+    vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
+  end
+  vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
+end
 
 local load_configs = function()
   local utils = require("utils")
@@ -20,12 +47,36 @@ local load_configs = function()
   end
 end
 
+local init = function()
+  if not did_init then
+    did_init = true
+    -- delay notifications till vim.notify was replaced or after 500ms
+    require("lazyvim.util").lazy_notify()
+
+    -- load options here, before lazy init while sourcing plugin modules
+    -- this is needed to make sure options will be correctly applied
+    -- after installing missing plugins
+    require("utils").load("options")
+    local plugin = require("lazy.core.plugin")
+    local add = plugin.Spec.add
+    plugin.Spec.add = function(self, plugin, ...)
+      if type(plugin) == "table" and M.renames[plugin[1]] then
+        plugin[1] = M.renames[plugin[1]]
+      end
+      return add(self, plugin, ...)
+    end
+  end
+end
+
 return {
   init_lazy = function()
-    lazy.bootstrap()
+    bootstrap()
+
+    -- load plugins with lazy
+    require("lazy").setup("plugins", opts)
+
+    init()
 
     load_configs()
-
-    lazy.init()
   end,
 }
