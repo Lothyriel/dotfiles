@@ -59,7 +59,6 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
-    optional = true,
     dependencies = {
       {
         "williamboman/mason.nvim",
