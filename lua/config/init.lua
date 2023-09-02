@@ -57,14 +57,6 @@ local init = function()
     -- this is needed to make sure options will be correctly applied
     -- after installing missing plugins
     require("utils").load("options")
-    local plugin = require("lazy.core.plugin")
-    local add = plugin.Spec.add
-    plugin.Spec.add = function(self, plugin, ...)
-      if type(plugin) == "table" and M.renames[plugin[1]] then
-        plugin[1] = M.renames[plugin[1]]
-      end
-      return add(self, plugin, ...)
-    end
   end
 end
 
