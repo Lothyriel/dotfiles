@@ -159,4 +159,25 @@ function M.on_load(name, fn)
   end
 end
 
+---@param name "autocmds" | "options" | "keymaps"
+function M.load(name)
+  local function _load(mod)
+    utils.try(function()
+      require(mod)
+    end, {
+      msg = "Failed loading " .. mod,
+      on_error = function(msg)
+        local info = require("lazy.core.cache").find(mod)
+        if info == nil or (type(info) == "table" and #info == 0) then
+          return
+        end
+        utils.error(msg)
+      end,
+    })
+  end
+  _load("config." .. name)
+  local pattern = "LazyVim" .. name:sub(1, 1):upper() .. name:sub(2)
+  vim.api.nvim_exec_autocmds("User", { pattern = pattern, modeline = false })
+end
+
 return M
