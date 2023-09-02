@@ -72,10 +72,9 @@ return {
   init_lazy = function()
     bootstrap()
 
+    init()
     -- load plugins with lazy
     require("lazy").setup("plugins", opts)
-
-    init()
 
     load_configs()
   end,
