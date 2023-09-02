@@ -4,6 +4,18 @@ local M = {}
 
 local terminals = {}
 
+local enabled = true
+function M.toggle_diagnostics()
+  enabled = not enabled
+  if enabled then
+    vim.diagnostic.enable()
+    Util.info("Enabled diagnostics", { title = "Diagnostics" })
+  else
+    vim.diagnostic.disable()
+    Util.warn("Disabled diagnostics", { title = "Diagnostics" })
+  end
+end
+
 -- delay notifications till vim.notify was replaced or after 500ms
 function M.lazy_notify()
   local notifs = {}
