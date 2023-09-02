@@ -37,6 +37,18 @@ return {
       bind_to_cwd = false,
       follow_current_file = { enabled = true },
       use_libuv_file_watcher = true,
+      filtered_items = {
+        visible = true,
+        hide_dotfiles = true,
+        hide_gitignored = true,
+        never_show = {
+          ".git",
+          "node_modules",
+          "target",
+          ".vs",
+          ".vscode",
+        },
+      },
     },
     window = {
       mappings = {
