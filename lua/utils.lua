@@ -235,7 +235,7 @@ function M.on_load(name, fn)
     end)
   else
     vim.api.nvim_create_autocmd("User", {
-      pattern = "LazyLoad",
+      pattern = "LazyEventLoad",
       callback = function(event)
         if event.data == name then
           fn(name)
