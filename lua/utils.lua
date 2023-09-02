@@ -11,7 +11,6 @@ function M.lsp_get_config(server)
 end
 
 -- this will return a function that calls telescope.
--- cwd will default to lazyvim.util.get_root
 -- for `files`, git_files or find_files will be chosen depending on .git
 function M.telescope(builtin, opts)
   local params = { builtin = builtin, opts = opts }
@@ -264,7 +263,7 @@ function M.load(name)
     })
   end
   _load("config." .. name)
-  local pattern = "LazyVim" .. name:sub(1, 1):upper() .. name:sub(2)
+  local pattern = "LazyEvent" .. name:sub(1, 1):upper() .. name:sub(2)
   vim.api.nvim_exec_autocmds("User", { pattern = pattern, modeline = false })
 end
 
