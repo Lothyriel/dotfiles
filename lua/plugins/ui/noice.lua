@@ -1,4 +1,5 @@
 return {
+  -- replaces UI for notifications and : terminal
   "folke/noice.nvim",
   event = "VeryLazy",
   opts = {
