@@ -51,7 +51,7 @@ local init = function()
   if not did_init then
     did_init = true
     -- delay notifications till vim.notify was replaced or after 500ms
-    require("lazyvim.util").lazy_notify()
+    require("utils").lazy_notify()
 
     -- load options here, before lazy init while sourcing plugin modules
     -- this is needed to make sure options will be correctly applied
