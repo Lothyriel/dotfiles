@@ -1,3 +1,35 @@
+local function get_module(path)
+  local pluginName = path:match("plugins[//\\]+%w[//\\%w]+[%w-]+")
+  return pluginName:gsub("[\\/]", ".")
+end
+
+local function traverse_directory(path, plugins)
+  local dirPlugins = vim.fn.readdir(path)
+
+  for _, item in ipairs(dirPlugins) do
+    local fullPath = path .. "/" .. item
+
+    table.insert(plugins, require(get_module(fullPath)))
+  end
+end
+
+local function get_plugin_tables()
+  local path = vim.fn.stdpath("config") .. "/lua/plugins"
+  local items = vim.fn.readdir(path)
+  local plugins = {}
+
+  for _, item in ipairs(items) do
+    local item_path = path .. "/" .. item
+    if vim.fn.isdirectory(item_path) == 1 then
+      traverse_directory(item_path, plugins)
+    else
+      table.insert(plugins, require(get_module(item_path)))
+    end
+  end
+
+  return plugins
+end
+
 local did_init = false
 
 local opts = {
@@ -66,7 +98,7 @@ return {
 
     init()
     -- load plugins with lazy
-    require("lazy").setup("plugins", opts)
+    require("lazy").setup(get_plugin_tables(), opts)
 
     load_configs()
   end,
