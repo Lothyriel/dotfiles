@@ -13,15 +13,14 @@ local function traverse_directory(path, plugins)
   end
 end
 
-local function get_plugin_tables()
-  local path = vim.fn.stdpath("config") .. "/lua/plugins"
+local function get_plugin_tables(path, r_plugins)
   local items = vim.fn.readdir(path)
-  local plugins = {}
+  local plugins = r_plugins or {}
 
   for _, item in ipairs(items) do
     local item_path = path .. "/" .. item
     if vim.fn.isdirectory(item_path) == 1 then
-      traverse_directory(item_path, plugins)
+      get_plugin_tables(item_path, plugins)
     else
       table.insert(plugins, require(get_module(item_path)))
     end
@@ -97,8 +96,10 @@ return {
     bootstrap()
 
     init()
+
+    local plugins_path = vim.fn.stdpath("config") .. "/lua/plugins"
     -- load plugins with lazy
-    require("lazy").setup(get_plugin_tables(), opts)
+    require("lazy").setup(get_plugin_tables(plugins_path), opts)
 
     load_configs()
   end,
