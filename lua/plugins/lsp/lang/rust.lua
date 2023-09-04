@@ -86,9 +86,9 @@ return {
         -- Ensure mason installs the server
         rust_analyzer = {
           keys = {
-            { "K", "<cmd>RustHoverActions<cr>", desc = "Hover Actions (Rust)" },
-            { "<leader>cR", "<cmd>RustCodeAction<cr>", desc = "Code Action (Rust)" },
-            { "<leader>dr", "<cmd>RustDebuggables<cr>", desc = "Run Debuggables (Rust)" },
+            { "K", "<Cmd>RustHoverActions<CR>", desc = "Hover Actions (Rust)" },
+            { "<leader>cR", "<Cmd>RustCodeAction<CR>", desc = "Code Action (Rust)" },
+            { "<leader>dr", "<Cmd>RustDebuggables<CR>", desc = "Run Debuggables (Rust)" },
           },
           settings = {
             ["rust-analyzer"] = {
