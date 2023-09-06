@@ -7,6 +7,6 @@ return {
       require("nvterm.terminal").toggle("horizontal")
     end
 
-    vim.keymap.set("n", "<leader>h", handler, { desc = "Open terminal horizontally }", remap = true })
+    vim.keymap.set("n", "<leader>h", handler, { desc = "Open terminal horizontally", remap = true })
   end,
 }
