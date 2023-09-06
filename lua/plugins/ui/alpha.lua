@@ -23,8 +23,8 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
       dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
+      dashboard.button("p", " " .. " Projects", ":Telescope conduct projects <CR>"),
       dashboard.button("c", " " .. " Config", ":e $MYVIMRC <CR>"),
-      dashboard.button("s", " " .. " Restore Session", [[:lua require("persistence").load() <cr>]]),
       dashboard.button("q", " " .. " Quit", ":qa<CR>"),
     }
     for _, button in ipairs(dashboard.section.buttons.val) do
