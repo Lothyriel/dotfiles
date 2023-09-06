@@ -13,8 +13,7 @@ return {
     { "<leader><space>", utils.telescope("files"), desc = "Find Files (root dir)" },
     -- find
     { "<leader>fb", "<Cmd>Telescope buffers<CR>", desc = "Buffers" },
-    { "<leader>ff", utils.telescope("files"), desc = "Find Files (root dir)" },
-    { "<leader>fF", utils.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+    { "<leader>ff", utils.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
     { "<leader>fr", "<Cmd>Telescope oldfiles<CR>", desc = "Recent" },
     { "<leader>fR", utils.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
     -- search
