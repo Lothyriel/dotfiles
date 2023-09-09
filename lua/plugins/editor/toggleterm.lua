@@ -1,3 +1,5 @@
+local terminals = {}
+
 return {
   "akinsho/toggleterm.nvim",
   version = "*",
@@ -18,8 +20,11 @@ return {
     end
 
     local toggle_terminal = function()
-      local terminal = Terminal:new({ hidden = true, dir = utils.get_root() })
-      terminal:toggle()
+      local key = utils.get_root()
+
+      terminals[key] = terminals[key] or Terminal:new({ hidden = true, dir = key })
+
+      terminals[key]:toggle()
     end
 
     -- lazygit
