@@ -59,7 +59,7 @@ map("n", "<leader>xq", "<Cmd>copen<cr>", { desc = "Quickfix List" })
 map("n", "<leader>ud", utils.toggle_diagnostics, { desc = "Toggle Diagnostics" })
 
 -- quit
-map("n", "<leader>qq", "<Cmd>qa<CR>", { desc = "Quit all" })
+map("n", "<leader>q", "<Cmd>qa<CR>", { desc = "Quit all" })
 
 -- highlights under cursor
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
