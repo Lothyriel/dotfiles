@@ -4,14 +4,21 @@ return {
   opts = {},
   config = function()
     local Terminal = require("toggleterm.terminal").Terminal
-    local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
-    local terminal = Terminal:new({ hidden = true })
+    local utils = require("utils")
 
     local toggle_git = function()
+      local lazygit = Terminal:new({
+        cmd = "lazygit",
+        hidden = true,
+        direction = "float",
+        dir = utils.get_root(),
+      })
+
       lazygit:toggle()
     end
 
     local toggle_terminal = function()
+      local terminal = Terminal:new({ hidden = true, dir = utils.get_root() })
       terminal:toggle()
     end
 
