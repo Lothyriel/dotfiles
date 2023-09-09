@@ -23,7 +23,7 @@ return {
     end
 
     -- lazygit
-    require("utils").map("n", "<leader>g", toggle_git, { desc = "Lazygit" })
+    require("utils").map("n", "<leader>gg", toggle_git, { desc = "Lazygit" })
 
     require("utils").map("n", "<leader>h", toggle_terminal, { desc = "Open terminal horizontally", remap = true })
 

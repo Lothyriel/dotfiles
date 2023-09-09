@@ -1,6 +1,10 @@
 local utils = require("utils")
 local map = utils.map
 
+map("n", "<leader>gc", function()
+  require("telescope.builtin").git_bcommits({ use_file_path = true })
+end, { desc = "Git commits (current file)" })
+
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
