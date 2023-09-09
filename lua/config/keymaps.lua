@@ -1,18 +1,5 @@
 local utils = require("utils")
-
-local function map(mode, lhs, rhs, opts)
-  local keys = require("lazy.core.handler").handlers.keys
-  ---@cast keys LazyKeysHandler
-  -- do not create the keymap if a lazy keys handler exists
-  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-    opts = opts or {}
-    opts.silent = opts.silent ~= false
-    if opts.remap and not vim.g.vscode then
-      opts.remap = nil
-    end
-    vim.keymap.set(mode, lhs, rhs, opts)
-  end
-end
+local map = utils.map
 
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -70,14 +57,6 @@ map("n", "<leader>xq", "<Cmd>copen<cr>", { desc = "Quickfix List" })
 
 -- diagnostics
 map("n", "<leader>ud", utils.toggle_diagnostics, { desc = "Toggle Diagnostics" })
-
--- lazygit
-map("n", "<leader>gg", function()
-  utils.float_term({ "lazygit" }, { cwd = utils.get_root(), esc_esc = false, ctrl_hjkl = false })
-end, { desc = "Lazygit (root dir)" })
-map("n", "<leader>gG", function()
-  utils.float_term({ "lazygit" }, { esc_esc = false, ctrl_hjkl = false })
-end, { desc = "Lazygit (cwd)" })
 
 -- quit
 map("n", "<leader>qq", "<Cmd>qa<CR>", { desc = "Quit all" })

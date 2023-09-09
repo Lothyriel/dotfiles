@@ -3,16 +3,6 @@ local function get_module(path)
   return pluginName:gsub("[\\/]", ".")
 end
 
-local function traverse_directory(path, plugins)
-  local dirPlugins = vim.fn.readdir(path)
-
-  for _, item in ipairs(dirPlugins) do
-    local fullPath = path .. "/" .. item
-
-    table.insert(plugins, require(get_module(fullPath)))
-  end
-end
-
 local function get_plugin_tables(path, r_plugins)
   local items = vim.fn.readdir(path)
   local plugins = r_plugins or {}
@@ -27,6 +17,20 @@ local function get_plugin_tables(path, r_plugins)
   end
 
   return plugins
+end
+
+local function map(mode, lhs, rhs, opts)
+  local keys = require("lazy.core.handler").handlers.keys
+  ---@cast keys LazyKeysHandler
+  -- do not create the keymap if a lazy keys handler exists
+  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+    opts = opts or {}
+    opts.silent = opts.silent ~= false
+    if opts.remap and not vim.g.vscode then
+      opts.remap = nil
+    end
+    vim.keymap.set(mode, lhs, rhs, opts)
+  end
 end
 
 local did_init = false
@@ -92,6 +96,7 @@ local init = function()
 end
 
 return {
+  map = map,
   init_lazy = function()
     bootstrap()
 
