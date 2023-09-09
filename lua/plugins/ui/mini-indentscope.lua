@@ -21,7 +21,6 @@ return {
         "mason",
         "notify",
         "toggleterm",
-        "lazyterm",
       },
       callback = function()
         vim.b.miniindentscope_disable = true
