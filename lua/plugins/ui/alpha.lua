@@ -23,7 +23,7 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
       dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
-      dashboard.button("p", " " .. " Projects", ":Telescope conduct projects <CR>"),
+      dashboard.button("p", " " .. " Projects", "<cmd>SessionManager load_session<cr>"),
       dashboard.button("c", " " .. " Config", ":e $MYVIMRC <CR>"),
       dashboard.button("q", " " .. " Quit", ":qa<CR>"),
     }
