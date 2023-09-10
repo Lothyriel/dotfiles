@@ -24,5 +24,12 @@ return {
       end,
       desc = "Save current project session",
     },
+    {
+      "<leader>pd",
+      function()
+        require("resession").delete()
+      end,
+      desc = "Delete project session",
+    },
   },
 }
