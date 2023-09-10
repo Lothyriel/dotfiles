@@ -13,7 +13,7 @@ return {
   },
   keys = {
     {
-      "<leader>po",
+      "<leader>pp",
       LoadResession,
       desc = "Load project session",
     },
