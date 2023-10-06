@@ -36,7 +36,7 @@ return {
     filesystem = {
       bind_to_cwd = false,
       follow_current_file = { enabled = true },
-      use_libuv_file_watcher = true,
+      use_libuv_file_watcher = false,
       filtered_items = {
         visible = true,
         hide_dotfiles = true,
