@@ -31,6 +31,9 @@ return {
     end
   end,
   opts = {
+    update_focused_file = {
+      enable = true,
+    },
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
     open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "Outline" },
     filesystem = {
@@ -51,6 +54,7 @@ return {
       },
     },
     window = {
+      position = "right",
       mappings = {
         ["<space>"] = "none",
       },
