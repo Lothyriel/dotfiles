@@ -1,0 +1,27 @@
+working_directory = 'C:\Users\JX\Documents\Repositories'
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Propo"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Propo"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Propo"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Propo"
+style = "Regular"
+
+[window]
+opacity = 0.9
+
+[window.dimensions]
+columns = 180
+lines = 40
