@@ -28,6 +28,10 @@ sudo apt install pkg-config -y
 sudo apt install libasound2-dev -y
 sudo apt install libudev-dev -y
 
+# bevy cross compiling
+
+sudo apt install mingw-w64 -y
+
 # dotnet
 
 # Get Ubuntu version
