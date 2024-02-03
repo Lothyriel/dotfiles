@@ -60,5 +60,8 @@ git config --global user.name "João Xavier"
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# cross compiling 
+rustup target add x86_64-pc-windows-gnu
+
 # configure github auth
 gh auth login
