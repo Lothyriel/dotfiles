@@ -18,3 +18,9 @@ choco install msiafterburner -y
 # install from store
 # - spotify
 # - whatsapp
+
+# development env
+
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+
+wsl --instal Ubuntu-22.04
