@@ -12,6 +12,7 @@ choco install lghub -y
 choco install googledrive -y
 choco install obsidian -y
 choco install chrome-remote-desktop-host -y
+choco install alacritty --pre -y
 
 # install from store
 # - spotify
