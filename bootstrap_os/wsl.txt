@@ -14,17 +14,21 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/lates
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 
+# neovim
+
 sudo apt install cmake -y
 sudo apt install g++ -y
+sudo apt install unzip
+sudo apt install ripgrep -y
+sudo apt install npm -y
+
+# bevy
 
 sudo apt install pkg-config -y 
 sudo apt install libasound2-dev -y
 sudo apt install libudev-dev -y
 
-sudo apt install ripgrep -y
-sudo apt install npm -y
-
-#dotnet
+# dotnet
 
 # Get Ubuntu version
 declare repo_version=$(if command -v lsb_release &> /dev/null; then lsb_release -r -s; else grep -oP '(?<=^VERSION_ID=).+' /etc/os-release | tr -d '"'; fi)
