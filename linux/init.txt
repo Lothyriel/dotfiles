@@ -1,10 +1,17 @@
 # ubuntu
 
+sudo apt update
+sudo apt upgrade
+
+sudo apt install gh -y
+
 sudo snap install --beta nvim --classic
+sudo snap install lazygit
+
 sudo apt install cmake -y
 sudo apt install g++ -y
+
 sudo apt install ripgrep -y
-snap install lazygit
 sudo apt install npm -y
 
 #nvim dotfiles
@@ -12,3 +19,6 @@ git clone https://github.com/Lothyriel/dotfiles ~/.config/nvim
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# configure github auth
+gh auth login
