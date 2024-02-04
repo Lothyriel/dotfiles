@@ -3,9 +3,23 @@
 sudo apt update
 sudo apt upgrade -y
 
-sudo apt install gh -y
+# neovim dependencies
 
-sudo snap install --beta nvim --classic
+sudo apt install gettext
+sudo apt install cmake -y
+sudo apt install g++ -y
+sudo apt install unzip
+sudo apt install ripgrep -y
+sudo apt install npm -y
+
+# build neovim from source
+
+git clone https://github.com/neovim/neovim
+cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+cd ../.. && sudo rm -r neovim
+
+sudo apt install gh -y
 
 # lazygit
 
@@ -13,14 +27,6 @@ LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/re
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
-
-# neovim
-
-sudo apt install cmake -y
-sudo apt install g++ -y
-sudo apt install unzip
-sudo apt install ripgrep -y
-sudo apt install npm -y
 
 # bevy
 
@@ -58,7 +64,7 @@ git config --global user.email "fastjonh@gmail.com"
 git config --global user.name "João Xavier"
 
 # rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # cross compiling 
 rustup target add x86_64-pc-windows-gnu
