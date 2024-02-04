@@ -19,6 +19,8 @@ choco install msiafterburner -y
 # - spotify
 # - whatsapp
 
+# download GPU drivers
+
 # development env
 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
