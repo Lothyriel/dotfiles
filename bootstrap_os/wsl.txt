@@ -5,7 +5,7 @@ sudo apt upgrade -y
 
 # neovim dependencies
 
-sudo apt install gettext
+sudo apt install gettext -y
 sudo apt install cmake -y
 sudo apt install g++ -y
 sudo apt install unzip
