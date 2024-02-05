@@ -3,26 +3,33 @@
 sudo apt update
 sudo apt upgrade -y
 
-# neovim dependencies
-
+# neovim build dependencies
 sudo apt install gettext -y
 sudo apt install cmake -y
-sudo apt install g++ -y
 sudo apt install unzip
-sudo apt install ripgrep -y
-sudo apt install npm -y
 
 # build neovim from source
-
 git clone https://github.com/neovim/neovim
-cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd neovim
+git checkout stable
+make CMAKE_BUILD_TYPE=RelWithDebInfo
 cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 cd ../.. && sudo rm -r neovim
 
+# neovim config dependencies
+sudo apt install ripgrep -y
+sudo apt install npm -y
+sudo apt install g++ -y
+
+# git dependencies
 sudo apt install gh -y
+git config --global user.email "fastjonh@gmail.com"
+git config --global user.name "João Xavier"
 
-# lazygit
+#nvim dotfiles
+git clone https://github.com/Lothyriel/dotfiles ~/.config/nvim
 
+# tarball lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
@@ -30,46 +37,28 @@ sudo install lazygit /usr/local/bin
 rm lazygit
 rm lazygit.tar.gz
 
-# bevy
-
-sudo apt install pkg-config -y 
-sudo apt install libasound2-dev -y
-sudo apt install libudev-dev -y
-
-# bevy cross compiling
-
-sudo apt install mingw-w64 -y
-
-# dotnet
-
-# Get Ubuntu version
-declare repo_version=$(if command -v lsb_release &> /dev/null; then lsb_release -r -s; else grep -oP '(?<=^VERSION_ID=).+' /etc/os-release | tr -d '"'; fi)
-
-# Download Microsoft signing key and repository
-wget https://packages.microsoft.com/config/ubuntu/$repo_version/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-
-# Install Microsoft signing key and repository
-sudo dpkg -i packages-microsoft-prod.deb -y
-
-# Clean up
-rm packages-microsoft-prod.deb
-
-# Update packages
-sudo apt update
-
-sudo apt install dotnet-sdk-8.0
-
-#nvim dotfiles
-git clone https://github.com/Lothyriel/dotfiles ~/.config/nvim
-
-git config --global user.email "fastjonh@gmail.com"
-git config --global user.name "João Xavier"
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-
 # cross compiling 
 rustup target add x86_64-pc-windows-gnu
+
+
+# dotnet
+declare repo_version=$(if command -v lsb_release &> /dev/null; then lsb_release -r -s; else grep -oP '(?<=^VERSION_ID=).+' /etc/os-release | tr -d '"'; fi)
+wget https://packages.microsoft.com/config/ubuntu/$repo_version/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb -y
+rm packages-microsoft-prod.deb
+sudo apt update
+sudo apt install dotnet-sdk-8.0
+
+
+# bevy
+sudo apt install pkg-config -y 
+sudo apt install libasound2-dev -y
+sudo apt install libudev-dev -y
+#cross compiling dependencies
+sudo apt install mingw-w64 -y
 
 # configure github auth
 gh auth login
