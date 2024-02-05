@@ -18,6 +18,7 @@ cd ../.. && sudo rm -r neovim
 
 # neovim config dependencies
 sudo apt install ripgrep -y
+sudo apt install fd-find -y
 sudo apt install npm -y
 sudo apt install g++ -y
 
