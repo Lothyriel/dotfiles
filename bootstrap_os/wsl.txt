@@ -26,6 +26,7 @@ sudo apt install g++ -y
 sudo apt install gh -y
 git config --global user.email "fastjonh@gmail.com"
 git config --global user.name "João Xavier"
+git config --global pull.rebase false
 
 #nvim dotfiles
 git clone https://github.com/Lothyriel/dotfiles ~/.config/nvim
