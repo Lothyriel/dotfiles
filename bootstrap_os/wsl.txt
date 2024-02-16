@@ -22,7 +22,7 @@ sudo apt install fd-find -y
 sudo apt install npm -y
 sudo apt install g++ -y
 
-# git dependencies
+# git configs
 sudo apt install gh -y
 git config --global user.email "fastjonh@gmail.com"
 git config --global user.name "João Xavier"
@@ -43,6 +43,7 @@ rm lazygit.tar.gz
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # cross compiling 
 rustup target add x86_64-pc-windows-gnu
+sudo apt install mingw-w64 -y
 
 
 # dotnet
@@ -53,13 +54,6 @@ rm packages-microsoft-prod.deb
 sudo apt update
 sudo apt install dotnet-sdk-8.0 -y
 
-
-# bevy
-sudo apt install pkg-config -y 
-sudo apt install libasound2-dev -y
-sudo apt install libudev-dev -y
-#cross compiling dependencies
-sudo apt install mingw-w64 -y
 
 # configure github auth
 gh auth login
