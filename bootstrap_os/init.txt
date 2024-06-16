@@ -26,4 +26,4 @@ choco install qbittorrent -y
 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
-wsl --install Ubuntu-22.04
+wsl --install -d Ubuntu-22.04
