@@ -3,6 +3,7 @@ sudo dnf install -y neovim
 sudo dnf install -y ripgrep
 sudo dnf install -y fd-find
 sudo dnf install -y gh
+sudo dnf install -y cmake
 
 sudo dnf copr enable atim/lazygit -y
 sudo dnf install -y lazygit
