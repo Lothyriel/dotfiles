@@ -23,6 +23,3 @@ opacity = 0.9
 [window.dimensions]
 columns = 180
 lines = 40
-
-[shell]
-program = "ubuntu2204.exe"
