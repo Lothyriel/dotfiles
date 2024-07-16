@@ -1,14 +1,18 @@
 sudo dnf install -y alacritty
-sudo dnf install -y neovim
 sudo dnf install -y ripgrep
 sudo dnf install -y fd-find
 sudo dnf install -y gh
 sudo dnf install -y cmake
+sudo dnf install -y opus-devel
 
 sudo dnf copr enable atim/lazygit -y
 sudo dnf install -y lazygit
 
-sudo dnf install opus-devel
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+sudo mkdir -p /opt/nvim
+sudo mv nvim.appimage /opt/nvim/nvim
+echo 'export PATH="$PATH:/opt/nvim/"' >> ~/.bashrc
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
