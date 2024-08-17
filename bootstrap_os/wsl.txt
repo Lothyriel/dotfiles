@@ -40,14 +40,14 @@ sudo apt install unzip -y
 git clone https://github.com/Lothyriel/dotfiles ~/.config/nvim
 
 
-# rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-
-
 # shell config
 sudo apt install zsh -y
-. "$HOME/.cargo/env"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+# rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> .zshrc
 
 
 # configure github auth
