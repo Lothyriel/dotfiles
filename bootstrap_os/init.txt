@@ -4,20 +4,20 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 refreshenv
 
-choco install discord -y
+## choco install discord -y
 choco install googlechrome -y
 choco install alacritty --pre -y
 choco install vlc -y
-choco install steam -y
+## choco install steam -y
 choco install lghub -y
 choco install googledrive -y
 choco install obsidian -y
 choco install chrome-remote-desktop-host -y
-choco install msiafterburner -y
+## choco install msiafterburner -y
 choco install qbittorrent -y
+choco install spotify -y
 
 # install from store
-# - spotify
 # - whatsapp
 
 # download GPU drivers
@@ -26,4 +26,4 @@ choco install qbittorrent -y
 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
-wsl --install -d Ubuntu-22.04
+wsl --install -d Ubuntu-24.04
