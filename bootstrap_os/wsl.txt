@@ -50,6 +50,9 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> .zshrc
 
+# dotnet 8
+sudo apt install dotnet8 -y
+
 
 # configure github auth
 gh auth login
