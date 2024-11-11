@@ -43,6 +43,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> .zshrc
+rustup component add rust-analyzer
 
 # dotnet 8
 sudo dnf install dotnet-sdk-8.0 -y
