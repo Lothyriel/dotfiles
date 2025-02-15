@@ -1,16 +1,13 @@
 # Ubuntu 24.04
 
-
 sudo apt update
 sudo apt upgrade -y
-
 
 # git configs
 sudo apt install gh -y
 git config --global user.email "fastjonh@gmail.com"
 git config --global user.name "João Xavier"
 git config --global pull.rebase false
-
 
 # installing lazygit tarball
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
@@ -27,7 +24,6 @@ sudo mv nvim-linux64 /opt/nvim
 sudo ln -s /opt/nvim/bin/nvim /usr/local/bin/nvim
 rm nvim-linux64.tar.gz
 
-
 # neovim config dependencies
 sudo apt install build-essential -y
 sudo apt install ripgrep -y
@@ -36,23 +32,21 @@ sudo apt install npm -y
 sudo apt install unzip -y
 sudo apt install cmake -y
 
-
 #nvim dotfiles
 git clone https://github.com/Lothyriel/dotfiles ~/.config/nvim
-
 
 # shell config
 sudo apt install zsh -y
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> .zshrc
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >>.zshrc
+# wasm-pack
+curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
 # dotnet 8
 sudo apt install dotnet8 -y
-
 
 # configure github auth
 gh auth login
