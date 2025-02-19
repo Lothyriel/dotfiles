@@ -46,5 +46,12 @@ curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 # dotnet 8
 sudo dnf install dotnet-sdk-8.0 -y
 
+# fly.io cli
+curl -L https://fly.io/install.sh | sh
+echo 'export FLYCTL_INSTALL="$HOME/.fly"' >>.zshrc
+echo 'export PATH="$FLYCTL_INSTALL/bin:$PATH"' >>.zshrc
+source ~/.zshrc
+fly auth login
+
 # configure github auth
 gh auth login
