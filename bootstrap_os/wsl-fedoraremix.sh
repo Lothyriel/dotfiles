@@ -23,6 +23,7 @@ rm nvim-linux64.tar.gz
 # neovim dependencies
 sudo dnf install g++ -y
 sudo dnf install ripgrep -y
+sudo dnf install fzf -y
 sudo dnf install fd-find -y
 sudo dnf install npm -y
 sudo dnf install cmake -y
