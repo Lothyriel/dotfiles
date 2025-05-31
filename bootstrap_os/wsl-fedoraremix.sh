@@ -36,6 +36,7 @@ sudo dnf install fish -y
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 fisher install hauleth/agnoster
 agnoster powerline
+# change theme color in ~/.config/fish/functions/fish_prompt.fish
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
