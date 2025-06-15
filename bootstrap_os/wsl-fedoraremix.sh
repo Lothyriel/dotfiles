@@ -38,9 +38,15 @@ fisher install hauleth/agnoster
 agnoster powerline
 # change theme color in ~/.config/fish/functions/fish_prompt.fish
 
+# nicer bin utils
+sudo dnf install eza -y
+echo 'alias ls="eza --icons --group-directories-first"' >>~/.config/fish/config.fish
+sudo dnf install zoxide -y
+echo 'zoxide init fish | source' >>~/.config/fish/config.fish
+
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-echo "set -gx PATH $HOME/.cargo/bin $PATH" >> ~/.config/fish/config.fish
+echo "set -gx PATH $HOME/.cargo/bin $PATH" >>~/.config/fish/config.fish
 rustup component add rust-analyzer
 # wasm-pack
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
@@ -50,8 +56,8 @@ sudo dnf install dotnet-sdk-8.0 -y
 
 # fly.io cli
 curl -L https://fly.io/install.sh | sh
-echo "set -gx FLYCTL_INSTALL $HOME/.fly" >> ~/.config/fish/config.fish
-echo "set -gx PATH $FLYCTL_INSTALL/bin $PATH" >> ~/.config/fish/config.fish
+echo "set -gx FLYCTL_INSTALL $HOME/.fly" >>~/.config/fish/config.fish
+echo "set -gx PATH $FLYCTL_INSTALL/bin $PATH" >>~/.config/fish/config.fish
 fly auth login
 
 # configure github auth
