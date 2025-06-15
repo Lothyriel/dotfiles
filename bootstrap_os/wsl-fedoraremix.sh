@@ -44,7 +44,7 @@ sudo dnf install eza -y
 echo 'alias ls="eza -lh --group-directories-first --icons=auto"' >>~/.config/fish/config.fish
 echo 'alias lsa="ls -a"' >>~/.config/fish/config.fish
 echo 'alias lt="eza --tree --level=2 --long --icons --git"' >>~/.config/fish/config.fish
-echo 'alias lta="lt -a' >>~/.config/fish/config.fish
+echo 'alias lta="lt -a"' >>~/.config/fish/config.fish
 sudo dnf install zoxide -y
 echo 'zoxide init fish | source' >>~/.config/fish/config.fish
 
