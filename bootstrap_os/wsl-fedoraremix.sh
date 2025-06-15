@@ -36,7 +36,7 @@ sudo dnf install fish -y
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 fisher install hauleth/agnoster
 agnoster powerline
-# change theme color in ~/.config/fish/functions/fish_prompt.fish
+## change theme color in ~/.config/fish/functions/fish_prompt.fish
 
 # nicer bin utils
 sudo dnf install bat -y
@@ -55,8 +55,8 @@ rustup component add rust-analyzer
 # wasm-pack
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
-# dotnet 8
-sudo dnf install dotnet-sdk-8.0 -y
+# dotnet 9
+sudo dnf install dotnet-sdk-9.0 -y
 
 # fly.io cli
 curl -L https://fly.io/install.sh | sh
