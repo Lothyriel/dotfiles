@@ -21,9 +21,6 @@ sudo dnf install npm -
 sudo dnf copr enable atim/lazygit -y
 sudo dnf install -y lazygit
 
-git clone https://github.com/Lothyriel/dotfiles ~/.config/nvim
-echo "set -gx PATH /opt/nvim \$PATH" >>~/.config/fish/config.fish
-
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
@@ -51,5 +48,4 @@ gh auth login
 
 # fly.io cli
 curl -L https://fly.io/install.sh | sh
-echo "set -gx PATH \$HOME/.fly/bin \$PATH" >>~/.config/fish/config.fish
 fly auth login
