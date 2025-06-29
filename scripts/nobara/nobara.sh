@@ -21,6 +21,9 @@ sudo dnf install npm -
 sudo dnf copr enable atim/lazygit -y
 sudo dnf install -y lazygit
 
+# tmux configs
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
