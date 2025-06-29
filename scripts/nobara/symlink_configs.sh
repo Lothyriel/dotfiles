@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 set dotfiles $HOME/repos/dotfiles
 ln -sf $dotfiles/nvim ~/.config/nvim
 mkdir -p ~/.config/alacritty && ln -sf $dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
