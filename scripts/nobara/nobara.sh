@@ -38,6 +38,7 @@ cargo install eza
 sudo dnf install rclone -y
 sudo dnf install tmux -y
 sudo dnf install alacritty -y
+sudo dnf install fortune -y
 
 # dotnet 9
 sudo dnf install dotnet-sdk-9.0 -y
