@@ -1,26 +1,55 @@
-sudo dnf install -y alacritty
-sudo dnf install -y ripgrep
-sudo dnf install -y fd-find
-sudo dnf install -y gh
-sudo dnf install -y cmake
-sudo dnf install -y opus-devel
+# flatpak's
+flatpak install --user flathub com.google.Chrome -y
+flatpak install --user flathub com.spotify.Client -y
+flatpak install --user flathub com.discordapp.Discord -y
+flatpak install --user flathub md.obsidian.Obsidian -y
+flatpak install --user flathub org.qbittorrent.qBittorrent -y
 
+# fish install
+sudo dnf install fish -y
+chsh -s /usr/bin/fish
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher install hauleth/agnoster
+agnoster powerline
+## change theme color in ~/.config/fish/functions/fish_prompt.fish
+
+# neovim dependencies
+sudo dnf install wl-clipboard -y
+sudo dnf install ripgrep -y
+sudo dnf install fd-find -y
+sudo dnf install npm -
 sudo dnf copr enable atim/lazygit -y
 sudo dnf install -y lazygit
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-sudo mkdir -p /opt/nvim
-sudo mv nvim.appimage /opt/nvim/nvim
-echo 'export PATH="$PATH:/opt/nvim/"' >> ~/.bashrc
+git clone https://github.com/Lothyriel/dotfiles ~/.config/nvim
+echo "set -gx PATH /opt/nvim \$PATH" >>~/.config/fish/config.fish
 
+# rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
-mkdir $HOME/.config/alacritty
-wget -O $HOME/.config/alacritty/alacritty.toml https://raw.githubusercontent.com/Lothyriel/dotfiles/main/bootstrap_os/alacritty.toml
+# bevy dependencies
+sudo dnf install alsa-lib-devel -y
+sudo dnf install systemd-devel -y
 
+# cargo installed binaries
+cargo install eza
+
+# bin untils
+sudo dnf install rclone -y
+sudo dnf install tmux -y
+sudo dnf install alacritty -y
+
+# dotnet 9
+sudo dnf install dotnet-sdk-9.0 -y
+
+# git
 git config --global user.email "fastjonh@gmail.com"
 git config --global user.name "João Xavier"
-git clone https://github.com/Lothyriel/dotfiles ~/.config/nvim
 
+sudo dnf install gh -y
 gh auth login
+
+# fly.io cli
+curl -L https://fly.io/install.sh | sh
+echo "set -gx PATH \$HOME/.fly/bin \$PATH" >>~/.config/fish/config.fish
+fly auth login
