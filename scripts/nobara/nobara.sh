@@ -40,6 +40,9 @@ sudo dnf install tmux -y
 sudo dnf install alacritty -y
 sudo dnf install fortune -y
 
+sudo dnf copr enable lizardbyte/beta
+sudo dnf install Sunshine -y
+
 # dotnet 9
 sudo dnf install dotnet-sdk-9.0 -y
 
