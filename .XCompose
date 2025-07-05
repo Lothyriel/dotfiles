@@ -1,0 +1,6 @@
+include "%L"
+
+<dead_acute> <c>  : "ç"
+<dead_acute> <C>  : "Ç"
+<dead_acute> <dead_acute> : "'"
+<dead_diaeresis> <dead_diaeresis> : "\""
