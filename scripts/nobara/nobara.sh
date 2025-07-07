@@ -1,4 +1,5 @@
 # flatpak's
+flatpak override --user --filesystem=~/.XCompose:ro
 flatpak install --user flathub com.google.Chrome -y
 flatpak install --user flathub com.spotify.Client -y
 flatpak install --user flathub com.discordapp.Discord -y
