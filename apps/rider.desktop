@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=JetBrains Rider
+Icon=/opt/rider/bin/rider.svg
+Exec="/opt/rider/bin/rider.sh" %f
+Comment=JetBrains Rider IDE
+Categories=Development;IDE;
+Terminal=false
+StartupNotify=true
+StartupWMClass=jetbrains-rider
