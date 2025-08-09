@@ -1,3 +1,9 @@
+# .XCompose
+sudo mkdir /etc/environments.d
+echo "export GTK_IM_MODULE=cedilla
+export QT_IM_MODULE=cedilla" | sudo tee -a /etc/environments.d/90cedilla.conf
+wget https://raw.githubusercontent.com/raelgc/win_us_intl/master/.XCompose -O ~/.XCompose
+
 # flatpak's
 flatpak override --user --filesystem=~/.XCompose:ro
 flatpak install --user flathub com.google.Chrome -y
