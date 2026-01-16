@@ -8,6 +8,11 @@ flatpak install --user flathub com.spotify.Client -y
 flatpak install --user flathub com.discordapp.Discord -y
 flatpak install --user flathub md.obsidian.Obsidian -y
 flatpak install --user flathub org.qbittorrent.qBittorrent -y
+flatpak install --user flathub com.parsecgaming.parsec -y
+flatpak install --user flathub org.videolan.VLC -y
+flatpak install --user flathub org.gimp.GIMP -y
+flatpak install --user flathub com.obsproject.Studio -y
+flatpak override --user --filesystem=~/.local/share/applications --filesystem=~/.local/share/icons com.google.Chrome
 
 # fish install
 sudo dnf install fish -y
@@ -24,6 +29,7 @@ sudo dnf install fd-find -y
 sudo dnf install npm -
 sudo dnf copr enable atim/lazygit -y
 sudo dnf install -y lazygit
+sudo dnf install -y neovim
 
 # tmux configs
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -37,6 +43,7 @@ sudo dnf install systemd-devel -y
 
 # cargo installed binaries
 cargo install eza
+cargo install amdgpu_top
 
 # bin untils
 sudo dnf install rclone -y
@@ -47,8 +54,8 @@ sudo dnf install fortune -y
 sudo dnf copr enable lizardbyte/beta
 sudo dnf install Sunshine -y
 
-# dotnet 9
-sudo dnf install dotnet-sdk-9.0 -y
+# dotnet
+sudo dnf install dotnet-sdk-10.0 -y
 
 # git
 git config --global user.email "fastjonh@gmail.com"
