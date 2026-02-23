@@ -13,6 +13,6 @@ alias lta="lt -a"
 zoxide init fish | source
 
 set -gx PATH $HOME/.fly/bin $PATH
-set -gr PATH $HOME/.local/bin $PATH
+set -gx PATH $HOME/.local/bin $PATH
 set -gx PNPM_HOME "/home/jx/.local/share/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
