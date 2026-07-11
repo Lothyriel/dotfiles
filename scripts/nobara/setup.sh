@@ -42,8 +42,9 @@ sudo dnf install alsa-lib-devel -y
 sudo dnf install systemd-devel -y
 
 # cargo installed binaries
-cargo install eza
-cargo install amdgpu_top
+cargo install eza --locked
+cargo install amdgpu_top --locked
+cargo install sccache --locked
 
 # bin untils
 sudo dnf install rclone -y
