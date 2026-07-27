@@ -321,7 +321,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][2][Applets][8][General]
-disabledStatusNotifiers=Xwayland Video Bridge_pipewireToXProxy
+disabledStatusNotifiers=Xwayland Video Bridge_pipewireToXProxy,com.discordapp.Discord
 extraItems=org.kde.plasma.networkmanagement,org.kde.plasma.cameraindicator,org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.plasma.keyboardindicator,org.kde.plasma.weather,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.clipboard
 hiddenItems=org.kde.plasma.bluetooth,tray-id,System Update Monitor,org.kde.plasma.weather,trayid854391,trayid39751921,trayid225481,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.clipboard
 knownItems=org.kde.kdeconnect,org.kde.plasma.vault,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.cameraindicator,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.keyboardlayout,org.kde.plasma.printmanager,org.kde.kscreen,org.kde.plasma.keyboardindicator,org.kde.plasma.weather,org.kde.plasma.bluetooth,org.kde.plasma.volume
