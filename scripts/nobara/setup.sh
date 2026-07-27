@@ -12,7 +12,7 @@ flatpak install --user flathub com.parsecgaming.parsec -y
 flatpak install --user flathub org.videolan.VLC -y
 flatpak install --user flathub org.gimp.GIMP -y
 flatpak install --user flathub com.obsproject.Studio -y
-flatpak override --user --filesystem=~/.local/share/applications --filesystem=~/.local/share/icons com.google.Chrome
+flatpak override --user --filesystem=~/.local/share/applications:create --filesystem=~/.local/share/icons:create com.google.Chrome
 
 # fish install
 sudo dnf install fish -y
