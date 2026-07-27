@@ -33,7 +33,8 @@ sudo dnf install -y neovim
 
 # tmux configs
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
+tmux source-file ~/.tmux.conf
+// Ctrl+b, then Shift+i
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
