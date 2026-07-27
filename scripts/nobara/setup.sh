@@ -42,7 +42,6 @@ sudo dnf install alsa-lib-devel -y
 sudo dnf install systemd-devel -y
 
 # cargo installed binaries
-cargo install eza --locked
 cargo install amdgpu_top --locked
 cargo install sccache --locked
 
@@ -51,6 +50,8 @@ sudo dnf install rclone -y
 sudo dnf install tmux -y
 sudo dnf install alacritty -y
 sudo dnf install fortune -y
+sudo dnf install zoxide -y
+sudo dnf install eza -y
 
 sudo dnf copr enable lizardbyte/beta
 sudo dnf install Sunshine -y
