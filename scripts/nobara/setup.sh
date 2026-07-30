@@ -53,6 +53,7 @@ sudo dnf install alacritty -y
 sudo dnf install fortune -y
 sudo dnf install zoxide -y
 sudo dnf install eza -y
+sudo dnf install podman-compose -y
 
 sudo dnf copr enable lizardbyte/beta
 sudo dnf install Sunshine -y
