@@ -173,7 +173,6 @@ popupWidth=788
 
 [Containments][2][Applets][22][Configuration][Appearance]
 customDateFormat=dd/MM
-dateFormat=custom
 fontFamily=Noto Sans
 fontSize=11
 fontWeight=400
@@ -256,10 +255,6 @@ plugin=org.kde.plasma.notifications
 immutability=1
 plugin=org.kde.plasma.printmanager
 
-[Containments][2][Applets][8][Applets][20]
-immutability=1
-plugin=org.kde.plasma.keyboardindicator
-
 [Containments][2][Applets][8][Applets][21]
 immutability=1
 plugin=org.kde.plasma.weather
@@ -312,18 +307,14 @@ PreloadWeight=42
 immutability=1
 plugin=org.kde.plasma.clipboard
 
-[Containments][2][Applets][8][Applets][42]
-immutability=1
-plugin=org.kde.plasma.mediacontroller
-
 [Containments][2][Applets][8][ConfigDialog]
 DialogHeight=540
 DialogWidth=720
 
 [Containments][2][Applets][8][General]
-disabledStatusNotifiers=Xwayland Video Bridge_pipewireToXProxy,com.discordapp.Discord
-extraItems=org.kde.plasma.networkmanagement,org.kde.plasma.cameraindicator,org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.plasma.keyboardindicator,org.kde.plasma.weather,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.clipboard
-hiddenItems=org.kde.plasma.bluetooth,tray-id,System Update Monitor,org.kde.plasma.weather,trayid854391,trayid39751921,trayid225481,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.clipboard
+disabledStatusNotifiers=Xwayland Video Bridge_pipewireToXProxy,com.discordapp.Discord,org.qbittorrent.qBittorrent
+extraItems=org.kde.plasma.networkmanagement,org.kde.plasma.cameraindicator,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.plasma.weather,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.clipboard
+hiddenItems=org.kde.plasma.bluetooth,tray-id,System Update Monitor,org.kde.plasma.weather,trayid854391,trayid39751921,trayid225481,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.clipboard,Sunshine
 knownItems=org.kde.kdeconnect,org.kde.plasma.vault,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.cameraindicator,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.keyboardlayout,org.kde.plasma.printmanager,org.kde.kscreen,org.kde.plasma.keyboardindicator,org.kde.plasma.weather,org.kde.plasma.bluetooth,org.kde.plasma.volume
 
 [Containments][2][General]
